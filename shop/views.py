@@ -1,4 +1,4 @@
 from django.shortcuts import render
 
-def shop_page_view(request):
-    return render(request, 'shop/shop.html')
+def product_list_view(request):
+    return render(request, 'shop/product_list.html')
