@@ -10,13 +10,13 @@
                     </div>
                     <nav class="site-nav">
                         <ul id="site-menu" class="site-menu">
-                            <li><a href="#">Home</a></li>
-                            <li><a href="category.html">Category</a></li>
-                            <li><a href="#">Recipes</a></li>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">Shop</a></li>
-                            <li><a href="contact.html">About</a></li>
-                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="{% url "pages:home" %}">Home</a></li>
+                            <li><a href="{% url "recipies:categories" %}">Category</a></li>
+                            <li><a href="{% url "recipies:list" %}">Recipes</a></li>
+                            <li><a href="{% url "blogs:list" %}">Blog</a></li>
+                            <li><a href="{% url "shop:product-list" %}">Shop</a></li>
+                            <li><a href="{% url "pages:about" %}">About</a></li>
+                            <li><a href="{% url "pages:contact" %}">Contact</a></li>
                         </ul>
                     </nav>
                 </div>
