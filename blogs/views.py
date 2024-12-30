@@ -8,3 +8,6 @@ def blog_page_view(request):
         'blogs': blogs
     }
     return render(request, 'blogs/blog_list.html', context)
+
+def blog_detail(request, pk):
+    
