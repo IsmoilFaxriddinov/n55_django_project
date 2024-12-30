@@ -13,7 +13,7 @@ def blog_detail_view(request, pk):
     blog = BlogModel.objects.filter(id=pk).first()
     if blog is not None:
         context = {
-            'blog': blog.first()
+            'blog': blog
         }
         return render(request, 'blogs/blog_detail.html', context)
     else:
