@@ -28,82 +28,27 @@
             <div class="col-lg-8">
                 <div class="single-blog-box">
                     <div class="main-figure">
-                        <a href="single-blog.html"><img src="{% static 'img/blog/blog9.jpg' %}" alt="Blog"></a>
+                        <a href="single-blog.html"><img src="{{ blog.image.url }}" alt="Blog"></a>
                     </div>
                     <div class="blog-content">
                         <ul class="entry-meta">
-                            <li><a href="#"><i class="fas fa-clock"></i>15 December, 2018</a></li>
-                            <li><a href="#"><i class="fas fa-user"></i>by <span>John Martin</span></a></li>
+                            <li><a href="#"><i class="fas fa-clock"></i>{{ blog.created_at }}</a></li>
+                            <li><a href="#"><i class="fas fa-user"></i>by <span>{{ blog.author.username }}</span></a></li>
                             <li><a href="#"><i class="fas fa-comments"></i>Comments <span>(03)</span></a></li>
                             <li><a href="#"><i class="fas fa-heart"></i><span>59</span></a></li>
                         </ul>
-                        <h3 class="item-title"><a href="single-blog.html">Tomatoes Stuffed with Foieand Chanter
-                                ellesdressed your designers
-                                had would if everyone theup still primaril</a></h3>
-                        <p class="item-details">Rmply dummy text of the printing and typesetting industry.
-                            Lorem Ipsum has been the
-                            industry's standard dummy text ever since the 1500s, when an unknown printer took a
-                            galley of type and scrambledsimply dummy text of the printing and typesetting
-                            industry. Lorem Ipsum has been the industry's standard.Nulla neque dolor, sagittis
-                            eget, iaculis quis, molestie non, velit. Mauris turpis nunc, blandit et, volutpat
-                            molestie, porta ut, ligula. Fusce pharetra convallis urna. Quisque ut nisi. Donec
-                            mi odio, faucibus at, scelerisque quis, convallis in, nisi. Suspendisse non nisl
-                            sit amet velit hendrerit rutrum. Ut leo. Ut a nisl id ante tempus hendrerit. Proin
-                            pretium.</p>
-                        <blockquote>Gimply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                            been the industry's standard dummy text ever since the 1500s.<span></span></blockquote>
-                        <p class="item-details">Rmply dummy text of the printing and typesetting industry.
-                            Lorem Ipsum has been the
-                            industry's standard dummy text ever since the 1500s, when an unknown printer took a
-                            galley of type and scrambledsimply dummy text of the printing and typesetting
-                            industry. Lorem Ipsum has been the industry's standard.Nulla neque dolor, sagittis
-                            eget, iaculis quisaerty molestie non, velit. Mauris turpis nunc, blandit et,
-                            volutpat molestie, porta ut, ligula. Fusce pharetra convallis urna are. Qisque ut
-                            nisi. Donec mi odio, faucibus at, scelerisque quis, convallis in, nisi. Suspendisse
-                            non nisl sit amet velit hendrerit rutrum. Ut leo. Ut a nisl id ante tempus
-                            hendrerit. Proin pretium.</p>
-                        <div class="details-figure-box">
-                            <div class="row gutters-2">
-                                <div class="col-sm-6 col-12">
-                                    <img src="{% static 'img/blog/sub-blog1.jpg' %}" alt="Blog">
-                                </div>
-                                <div class="col-sm-6 col-12">
-                                    <img src="{% static 'img/blog/sub-blog2.jpg' %}" alt="Blog">
-                                </div>
-                            </div>
-                        </div>
-                        <h4 class="description-deading">Rmply dummy text of the printing and typesetting:</h4>
-                        <p class="item-details">Rmply dummy text of the printing and typesetting industryorem
-                            Ipsum has been the industry's standard dummy text ever since the 1500s, when an
-                            unknown printer took.</p>
-                        <ul class="description-list">
-                            <li><span>01.</span>Id eleifend odio malesuada.</li>
-                            <li><span>02.</span>Suspendisse et fermentum elit.</li>
-                            <li><span>03.</span>Phasellus eget tristique ligula</li>
-                        </ul>
-                        <p class="item-details">Amply dummy text of the printing and typesetting industry.
-                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when
-                            an unknown printer took a galley of type and scrambledsimply dummy text of the
-                            printing and typesetting industry. Lorem Ipsum has been the industry's
-                            standard.Nulla neque dolor, sagittis eget iaculis quisaerty molestie nonvelitauris
-                            turpis nunc.</p>
+                        <h3 class="item-title"><a href="single-blog.html">{{ blog.title }}</a></h3>
+                        <p class="item-details">{{ blog.long_description }}</p>
                     </div>
                     <div class="tag-share">
                         <ul>
                             <li>
                                 <ul class="inner-tag">
+                                    {% for tag in blog.hashtags.all %}
                                     <li>
-                                        <a href="#">Burger</a>
+                                        <a href="#">{{ tag.title }}</a>
                                     </li>
-                                    <li>
-                                        <a href="#">Dinner</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Pizza</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Salad</a>
-                                    </li>
+                                    {% endfor %}
                                 </ul>
                             </li>
                             <li>
