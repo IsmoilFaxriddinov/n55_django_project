@@ -25,6 +25,10 @@ class BlogHashganModel(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateField(auto_now=True)
 
+    class Meta:
+        verbose_name = 'blog hashtag'
+        verbose_name_plural = 'blog hashtags'
+
 class BlogModel(models.Model):
     author = models.ForeignKey(User, on_delete=models.SET_NULL, related_name='blogs', null=True, blank=True)
     image = models.ImageField(upload_to='blogs')
