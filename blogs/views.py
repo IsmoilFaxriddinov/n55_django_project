@@ -9,5 +9,12 @@ def blog_page_view(request):
     }
     return render(request, 'blogs/blog_list.html', context)
 
-def blog_detail(request, pk):
-    
+def blog_detail_view(request, pk):
+    blog = BlogModel.objects.get(id=pk)
+    if blog is not None:
+        context = {
+            'blog': blog
+        }
+        return render(request, 'blogs/blog_detail.html', context)
+    else:
+        return render(request, 'pages/404.html')
