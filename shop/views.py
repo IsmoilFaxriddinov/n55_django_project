@@ -8,3 +8,6 @@ context = {
 
 def product_list_view(request):
     return render(request, 'shop/product-list.html', context)
+
+def product_detail_view(request):
+    return render(request, 'shop/product_detail.html', context)

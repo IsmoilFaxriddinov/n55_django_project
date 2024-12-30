@@ -42,7 +42,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        {% for shop in shops %}
+                        {% for shop in product %}
                         <div class="col-md-4 col-sm-6 col-12">
                             <div class="shop-box-layout1">
                                 <div class="mask-item bg--accent">
@@ -68,8 +68,8 @@
                                     </ul>
                                 </div>
                                 <div class="item-content">
-                                    <h3 class="item-title"><a href="single-shop.html">Kitchen Utensils</a></h3>
-                                    <div class="item-price"><span class="currency">$</span>28.00</div>
+                                    <h3 class="item-title"><a href="single-shop.html">{{ shop.name }}</a></h3>
+                                    <div class="item-price"><span class="currency">$</span>{{ shop.price }}</div>
                                 </div>
                             </div>
                         </div>
