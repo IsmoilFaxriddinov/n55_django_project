@@ -3,7 +3,7 @@
 {% block title %}Product detail{% endblock %}
 {% block content %}
 <!-- Inne Page Banner Area Start Here -->
-<section class="inner-page-banner bg-common" data-bg-image="img/figure/inner-page-banner1.jpg">
+<section class="inner-page-banner bg-common" data-bg-image="{% static "img/figure/inner-page-banner1.jpg" %}">
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -34,13 +34,13 @@
                                     <a href="#"><img alt="single" src="{% static 'img/product/shop-figure14.png' %}" data-zoom-image="{% static "img/product/product27b.png" %}"></a>
                                 </div>
                                 <div class="tab-pane fade" id="related2">
-                                    <a href="#"><img alt="single" src="img/product/shop-figure15.png" data-zoom-image="img/product/product27-1b.png"></a>
+                                    <a href="#"><img alt="single" src="{% static "img/product/shop-figure15.png" %}" data-zoom-image=stat"{% static "img/product/product27-1b.png" %}"></a>
                                 </div>
                                 <div class="tab-pane fade" id="related3">
-                                    <a href="#"><img alt="single" src="img/product/shop-figure16.png" data-zoom-image="img/product/product27-2b.png"></a>
+                                    <a href="#"><img alt="single" src="{% static "img/product/shop-figure16.png" %}" data-zoom-image="{% static "img/product/product27-2b.png" %}"></a>
                                 </div>
                                 <div class="tab-pane fade" id="related4">
-                                    <a href="#"><img alt="single" src="img/product/shop-figure17.png" data-zoom-image="img/product/product27-3b.png"></a>
+                                    <a href="#"><img alt="single" src="{% static "img/product/shop-figure17.png" %}" data-zoom-image="{% static "img/product/product27-3b.png" %}"></a>
                                 </div>
                             </div>
                         </div>
