@@ -10,7 +10,7 @@ def product_list_view(request):
     return render(request, 'shop/product-list.html', context)
 
 def product_detail_view(request, pk):
-    product = ProductModel.objects.filter(id=pk).first()
+    product = ProductModel.objects.filter(id=pk)
     if product is not None:
         context = {
             'product': product
