@@ -47,25 +47,26 @@
                         <div class="col-lg-3 col-12 order-lg-1">
                             <ul class="nav tab-nav tab-nav-list">
                                 <li class="nav-item">
-                                    <a class="active" href="#related1" data-toggle="tab" aria-expanded="false"><img alt="related1" src="img/product/shop-figure10.png" class="img-fluid"></a>
+                                    <a class="active" href="#related1" data-toggle="tab" aria-expanded="false"><img alt="related1" src="{% static "img/product/shop-figure10.png" %}" class="img-fluid"></a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#related2" data-toggle="tab" aria-expanded="false"><img alt="related2" src="img/product/shop-figure11.png" class="img-fluid"></a>
+                                    <a href="#related2" data-toggle="tab" aria-expanded="false"><img alt="related2" src="{% static "img/product/shop-figure11.png" %}" class="img-fluid"></a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#related3" data-toggle="tab" aria-expanded="false"><img alt="related3" src="img/product/shop-figure12.png" class="img-fluid"></a>
+                                    <a href="#related3" data-toggle="tab" aria-expanded="false"><img alt="related3" src="{% static "img/product/shop-figure12.png" %}" class="img-fluid"></a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#related4" data-toggle="tab" aria-expanded="false"><img alt="related4" src="img/product/shop-figure13.png" class="img-fluid"></a>
+                                    <a href="#related4" data-toggle="tab" aria-expanded="false"><img alt="related4" src="{% static "img/product/shop-figure13.png" %}" class="img-fluid"></a>
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
+            {% for shop in product %}
             <div class="col-lg-5 col-12">
                 <div class="single-shop-content">
-                    <h2 class="item-title">Kitchen Key Spone</h2>
+                    <h2 class="item-title">{{ shop.name }}</h2>
                     <ul class="item-rate">
                         <li><i class="fas fa-star"></i></li>
                         <li><i class="fas fa-star"></i></li>
@@ -74,7 +75,7 @@
                         <li><i class="fas fa-star"></i></li>
                         <li><a href="#">( 01 Reviews )</a></li>
                     </ul>
-                    <div class="item-price">$60.00<span>$60.00</span></div>
+                    <div class="item-price">{{ shop.price }}<span>${{ shop.price }}</span></div>
                     <ul class="entry-meta">
                         <li>SKU: <span>BN3056</span></li>
                         <li>Availablity: <span>Instock</span></li>
@@ -107,6 +108,7 @@
                     </ul>
                 </div>
             </div>
+            {% endfor %}
             <div class="col-12">
                 <div class="single-shop-description">
                     <ul class="nav nav-tabs tab-nav-list">
@@ -153,7 +155,7 @@
                 <div class="shop-box-layout1">
                     <div class="mask-item bg--accent">
                         <div class="item-figure">
-                            <img src="img/product/shop-figure1.png" alt="Product">
+                            <img src="{% static "img/product/shop-figure1.png" %}" alt="Product">
                         </div>
                         <ul class="action-items">
                             <li>
@@ -181,7 +183,7 @@
                 <div class="shop-box-layout1">
                     <div class="mask-item bg--accent">
                         <div class="item-figure">
-                            <img src="img/product/shop-figure2.png" alt="Product">
+                            <img src="{% static "img/product/shop-figure2.png" %}" alt="Product">
                         </div>
                         <ul class="action-items">
                             <li>
@@ -209,7 +211,7 @@
                 <div class="shop-box-layout1">
                     <div class="mask-item bg--accent">
                         <div class="item-figure">
-                            <img src="img/product/shop-figure3.png" alt="Product">
+                            <img src="{% static "img/product/shop-figure3.png" %}" alt="Product">
                         </div>
                         <ul class="action-items">
                             <li>
@@ -237,7 +239,7 @@
                 <div class="shop-box-layout1">
                     <div class="mask-item bg--accent">
                         <div class="item-figure">
-                            <img src="img/product/shop-figure4.png" alt="Product">
+                            <img src="{% static "img/product/shop-figure4.png" %}" alt="Product">
                         </div>
                         <ul class="action-items">
                             <li>
@@ -265,7 +267,7 @@
                 <div class="shop-box-layout1">
                     <div class="mask-item bg--accent">
                         <div class="item-figure">
-                            <img src="img/product/shop-figure5.png" alt="Product">
+                            <img src="{% static "img/product/shop-figure5.png" %}" alt="Product">
                         </div>
                         <ul class="action-items">
                             <li>
@@ -293,7 +295,7 @@
                 <div class="shop-box-layout1">
                     <div class="mask-item bg--accent">
                         <div class="item-figure">
-                            <img src="img/product/shop-figure6.png" alt="Product">
+                            <img src="{% static "img/product/shop-figure6.png" %}" alt="Product">
                         </div>
                         <ul class="action-items">
                             <li>
@@ -321,7 +323,7 @@
                 <div class="shop-box-layout1">
                     <div class="mask-item bg--accent">
                         <div class="item-figure">
-                            <img src="img/product/shop-figure7.png" alt="Product">
+                            <img src="{% static "img/product/shop-figure7.png" %}" alt="Product">
                         </div>
                         <ul class="action-items">
                             <li>
@@ -349,7 +351,7 @@
                 <div class="shop-box-layout1">
                     <div class="mask-item bg--accent">
                         <div class="item-figure">
-                            <img src="img/product/shop-figure8.png" alt="Product">
+                            <img src="{% static "img/product/shop-figure8.png" %}" alt="Product">
                         </div>
                         <ul class="action-items">
                             <li>
@@ -377,7 +379,7 @@
                 <div class="shop-box-layout1">
                     <div class="mask-item bg--accent">
                         <div class="item-figure">
-                            <img src="img/product/shop-figure9.png" alt="Product">
+                            <img src="{% static "img/product/shop-figure9.png" %}" alt="Product">
                         </div>
                         <ul class="action-items">
                             <li>
