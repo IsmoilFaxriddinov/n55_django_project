@@ -25,22 +25,23 @@
 <section class="single-shop-page-wrap padding-top-80 padding-bottom-70">
     <div class="container">
         <div class="row">
+            {% for shop in product %}
             <div class="col-lg-7 col-12">
                 <div class="single-shop-figure-view">
                     <div class="row">
                         <div class="col-lg-9 col-12 order-lg-2">
                             <div class="tab-content">
                                 <div class="tab-pane fade active show" id="related1">
-                                    <a href="#"><img alt="single" src="{% static 'img/product/shop-figure14.png' %}" data-zoom-image="{% static "img/product/product27b.png" %}"></a>
+                                    <a href="#"><img width="500" alt="single" src="{{ shop.img.url }}" data-zoom-image="{{ shop.img.url }}"></a>
                                 </div>
                                 <div class="tab-pane fade" id="related2">
-                                    <a href="#"><img alt="single" src="{% static "img/product/shop-figure15.png" %}" data-zoom-image=stat"{% static "img/product/product27-1b.png" %}"></a>
+                                    <a href="#"><img alt="single" src="{{ shop.img.url }}" data-zoom-image=stat"{{ shop.img.url }}"></a>
                                 </div>
                                 <div class="tab-pane fade" id="related3">
-                                    <a href="#"><img alt="single" src="{% static "img/product/shop-figure16.png" %}" data-zoom-image="{% static "img/product/product27-2b.png" %}"></a>
+                                    <a href="#"><img alt="single" src="{{ shop.img.url }}" data-zoom-image="{{ shop.img.url }}"></a>
                                 </div>
                                 <div class="tab-pane fade" id="related4">
-                                    <a href="#"><img alt="single" src="{% static "img/product/shop-figure17.png" %}" data-zoom-image="{% static "img/product/product27-3b.png" %}"></a>
+                                    <a href="#"><img alt="single" src="{{ shop.img.url }}" data-zoom-image="{{ shop.img.url }}"></a>
                                 </div>
                             </div>
                         </div>
@@ -63,7 +64,6 @@
                     </div>
                 </div>
             </div>
-            {% for shop in product %}
             <div class="col-lg-5 col-12">
                 <div class="single-shop-content">
                     <h2 class="item-title">{{ shop.name }}</h2>
