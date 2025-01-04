@@ -11,4 +11,12 @@ def contact_page_view(request):
     if request.method == 'GET':
         return render(request, 'pages/contact.html')
     elif request.method == "POST":
-        forms = ContactForm(request.POST)
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return render(request, 'pages/contact.html')
+        else:
+            context = {
+                'errors': form.errors
+            }
+            return render(context, 'pages/contact.html', context)
