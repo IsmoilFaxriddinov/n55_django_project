@@ -54,6 +54,7 @@
                 <div class="section-heading heading-dark">
                     <h3 class="item-heading-big">Send Us Message</h3>
                 </div>
+                {% csrf_token %}
                 <form id="contact-form" class="contact-form-box">
                     <div class="row">
                         <div class="col-md-6 form-group">
@@ -73,7 +74,6 @@
                         </div>
                         <div class="col-12 form-group">
                             <textarea placeholder="Type your text" class="textarea form-control" name="text"  id="form-message"
-                            {% csrf_token %}
                                 rows="7" cols="20" data-error="Message field is required" required></textarea>
                             <div class="help-block with-errors"></div>
                         </div>
