@@ -72,7 +72,8 @@
                             <div class="help-block with-errors"></div>
                         </div>
                         <div class="col-12 form-group">
-                            <textarea placeholder="Type your text" class="textarea form-control" name="message" id="form-message"
+                            <textarea placeholder="Type your text" class="textarea form-control" name="text"  id="form-message"
+                            {% csrf_token %}
                                 rows="7" cols="20" data-error="Message field is required" required></textarea>
                             <div class="help-block with-errors"></div>
                         </div>

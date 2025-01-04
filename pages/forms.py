@@ -1,5 +1,5 @@
 from django import forms
 
-class ContactForm(forms.Form):
+class ContactForm(forms.ModelForm):
     class Meta:
         
