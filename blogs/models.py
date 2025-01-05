@@ -31,3 +31,12 @@ class BlogModel(BaseModel):
     class Meta:
         verbose_name = 'blog'
         verbose_name_plural = 'blogs'
+
+class BlogCommentModel(BaseModel):
+    blog = models.ForeignKey(BlogModel, on_delete=models.CASCADE, related_name='comments')
+    user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True, related_name='blog_comments')
+
+class BlogLikesModel(BaseModel):
+    blog = models.ForeignKey(BlogModel, on_delete=models.CASCADE, related_name='likes')
+    user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True, related_name='blog_likes')
+    
