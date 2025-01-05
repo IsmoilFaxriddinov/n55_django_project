@@ -47,6 +47,5 @@ class BlogLikesModel(BaseModel):
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True, related_name='blog_likes')
 
     class Meta:
-        verbose_name = 'blog like'
-        verbose_name_plural = 'blog likes'
+        unique_together = ['blog', 'user']
     

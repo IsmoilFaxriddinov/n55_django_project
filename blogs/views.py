@@ -4,6 +4,7 @@ from blogs.models import BlogModel
 
 def blog_page_view(request):
     blogs = BlogModel.objects.all()
+    most_liked_blogs = BlogModel.objects.count('blog')
     context = {
         'blogs': blogs
     }

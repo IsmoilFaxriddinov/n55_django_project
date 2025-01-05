@@ -29,7 +29,7 @@
                 {% for blog in blogs %}
                 <div class="blog-box-layout1">
                     <div class="item-figure">
-                        <a href="{% url "blog:detail" pk=blog.id %}"><img src="{{ blog.image.url }}" alt="Blog"></a>
+                        <a href="{% url "blogs:detail" pk=blog.id %}"><img src="{{ blog.image.url }}" alt="Blog"></a>
                     </div>
                     <div class="item-content">
                         <ul class="entry-meta">
