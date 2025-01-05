@@ -7,8 +7,8 @@ class BlogCategoryModel(BaseModel):
     title = models.CharField(max_length=128)
 
     class Meta:
-        verbose_name = 'blog hashtag'
-        verbose_name_plural = 'blog hashtags'
+        verbose_name = 'blog category'
+        verbose_name_plural = 'blog categories'
 
 class BlogHashganModel(BaseModel):
     title = models.CharField(max_length=128)
