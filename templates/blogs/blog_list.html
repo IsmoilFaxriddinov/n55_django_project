@@ -40,7 +40,7 @@
                         </ul>
                         <h3 class="item-title"><a href="single-blog.html">{{ blog.title }}</a></h3>
                         <p>{{ blog.short_description }}</p>
-                        <a href="single-blog.html" class="item-btn">Continue Reading<i class="flaticon-next"></i></a>
+                        <a href="{% url "blogs:detail" pk=blog.id %}" class="item-btn">Continue Reading<i class="flaticon-next"></i></a>
                     </div>
                 </div>
                 {% endfor %}
