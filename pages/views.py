@@ -13,7 +13,7 @@ def contact_page_view(request):
     elif request.method == "POST":
         form = ContactForm(request.POST)
         if form.is_valid():
-            form.save()
+            
             return render(request, 'pages/contact.html')
         else:
             context = {
