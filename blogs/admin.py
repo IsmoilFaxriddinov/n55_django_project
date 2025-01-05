@@ -15,3 +15,24 @@ class BlogHashtagModelAdmin(admin.ModelAdmin):
     list_filter = ['created_at', 'updated_at']
     ordering = ['-created_at']
 
+@admin.register(models.BlogCategoryModel)
+class BlogCategoryModelAdmin(admin.ModelAdmin):
+    list_display = ['title', 'created_at']
+    search_fields = ['title']
+    list_filter = ['created_at', 'updated_at']
+    ordering = ['-created_at']
+
+@admin.register(models.BlogCommentModel)
+class BlogCommentsModelAdmin(admin.ModelAdmin):
+    list_display = ['blog__title', 'user__username', 'created_at']
+    search_fields = ['blog__title']
+    list_filter = ['created_at', 'updated_at']
+    ordering = ['-created_at']
+
+@admin.register(models.BlogLikesModel)
+class BlogLikesModelAdmin(admin.ModelAdmin):
+    list_display = ['blog__title', 'user__username', 'created_at']
+    search_fields = ['blog__title']
+    list_filter = ['created_at', 'updated_at']
+    ordering = ['-created_at']
+
