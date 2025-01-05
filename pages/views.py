@@ -20,3 +20,18 @@ def contact_page_view(request):
                 'errors': form.errors
             }
             return render(context, 'pages/contact.html', context)
+
+def test_view(request):
+    if request.method == "GET":
+        form = ContactForm()
+        context = {
+            "form": form
+        }
+        return render(request, 'a.html', context)
+    elif request.method == "POST":
+        print(request.POST)
+        form = ContactForm()
+        context = {
+            "form": form
+        }
+        return render(request, 'a.html', context)
