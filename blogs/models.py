@@ -36,7 +36,17 @@ class BlogCommentModel(BaseModel):
     blog = models.ForeignKey(BlogModel, on_delete=models.CASCADE, related_name='comments')
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True, related_name='blog_comments')
 
+    comment = models.TextField()
+
+    class Meta:
+        verbose_name = 'blog comment'
+        verbose_name_plural = 'blog comments'
+
 class BlogLikesModel(BaseModel):
     blog = models.ForeignKey(BlogModel, on_delete=models.CASCADE, related_name='likes')
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True, related_name='blog_likes')
+
+    class Meta:
+        verbose_name = 'blog like'
+        verbose_name_plural = 'blog likes'
     
