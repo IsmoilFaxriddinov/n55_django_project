@@ -1,12 +1,16 @@
+from django.db.models import Count
 from django.shortcuts import render
 
 from blogs.models import BlogModel
 
 def blog_page_view(request):
     blogs = BlogModel.objects.all()
-    most_liked_blogs = BlogModel.objects.count('blog')
+    most_liked_blogs = BlogModel.objects.all().order_by('likes')[:3]
+    last_blogs = BlogModel.objects.order_by('-created_at')[:4]
     context = {
-        'blogs': blogs
+        'blogs': blogs,
+        'most_liked_blogs': most_liked_blogs,
+        'last_blogs': last_blogs 
     }
     return render(request, 'blogs/blog_list.html', context)
 

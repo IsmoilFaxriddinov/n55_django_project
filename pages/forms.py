@@ -1,8 +1,13 @@
 from django import forms
 
-from pages.models import ContactModel
+from pages.models import AboutModel, ContactModel
 
 class ContactForm(forms.ModelForm):
     class Meta:
         model = ContactModel
+        fields = '__all__'
+
+class AboutForm(forms.ModelForm):
+    class Meta:
+        model = AboutModel
         fields = '__all__'

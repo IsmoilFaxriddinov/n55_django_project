@@ -36,7 +36,8 @@
                         <div class="section-heading heading-dark">
                             <h2 class="item-heading">QUICK CONTACT ME</h2>
                         </div>
-                        <form class="about-contact-form">
+                        <form class="about-contact-form" method="POST", action="{% url "pages:about" %}">
+                            {% csrf_token %}
                             <div class="row">
                                 <div class="col-md-4 form-group">
                                     <input type="text" placeholder="Name *" class="form-control" name="name" data-error="Name field is required"
@@ -54,7 +55,7 @@
                                     <div class="help-block with-errors"></div>
                                 </div>
                                 <div class="col-12 form-group">
-                                    <textarea placeholder="Message" class="textarea form-control" name="message" id="form-message"
+                                    <textarea placeholder="Message" class="textarea form-control" name="text" id="form-message"
                                         rows="7" cols="20" data-error="Message field is required" required></textarea>
                                     <div class="help-block with-errors"></div>
                                 </div>

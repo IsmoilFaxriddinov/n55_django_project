@@ -66,58 +66,18 @@
                     </div>
                     <div class="widget-blog-post">
                         <ul class="block-list">
+                            {% for blog in blogs %}
                             <li class="single-item">
                                 <div class="item-img">
-                                    <a href="#"><img src="{% static 'img/product/latest1.jpg' %}" alt="Post"></a>
+                                    <a href="{% url "blogs:detail" pk=blog.id %}"><img src="{{ blog.image.url }}" alt="Post"></a>
                                 </div>
                                 <div class="item-content">
-                                    <div class="item-post-date"><a href="#"><i class="fas fa-clock"></i>15 Dec,
-                                            2018</a></div>
-                                    <h4 class="item-title"><a href="#">Salami Oven Roasted are
-                                            Mozzarella Oelette</a></h4>
-                                    <div class="item-post-by"><a href="single-blog.html"><i class="fas fa-user"></i><span>by</span>
-                                            John Martin</a></div>
+                                    <div class="item-post-date"><a href="#"><i class="fas fa-clock"></i>{{ blog.created_at }}</a></div>
+                                    <h4 class="item-title"><a href="#">{{ blog.title|truncatechars:":20" }}</a></h4>
+                                    <div class="item-post-by"><a href="single-blog.html"><i class="fas fa-user"></i>{{ blog.author.username|truncatechars:":10" }}</a></div>
                                 </div>
                             </li>
-                            <li class="single-item">
-                                <div class="item-img">
-                                    <a href="#"><img src="{% static 'img/product/latest2.jpg' %}" alt="Post"></a>
-                                </div>
-                                <div class="item-content">
-                                    <div class="item-post-date"><a href="#"><i class="fas fa-clock"></i>15 Dec,
-                                            2018</a></div>
-                                    <h4 class="item-title"><a href="#">Salami Oven Roasted are
-                                            Mozzarella Oelette</a></h4>
-                                    <div class="item-post-by"><a href="single-blog.html"><i class="fas fa-user"></i><span>by</span>
-                                            John Martin</a></div>
-                                </div>
-                            </li>
-                            <li class="single-item">
-                                <div class="item-img">
-                                    <a href="#"><img src="{% static 'img/product/latest3.jpg' %}" alt="Post"></a>
-                                </div>
-                                <div class="item-content">
-                                    <div class="item-post-date"><a href="#"><i class="fas fa-clock"></i>15 Dec,
-                                            2018</a></div>
-                                    <h4 class="item-title"><a href="#">Salami Oven Roasted are
-                                            Mozzarella Oelette</a></h4>
-                                    <div class="item-post-by"><a href="single-blog.html"><i class="fas fa-user"></i><span>by</span>
-                                            John Martin</a></div>
-                                </div>
-                            </li>
-                            <li class="single-item">
-                                <div class="item-img">
-                                    <a href="#"><img src="{% static 'img/product/latest4.jpg' %}" alt="Post"></a>
-                                </div>
-                                <div class="item-content">
-                                    <div class="item-post-date"><a href="#"><i class="fas fa-clock"></i>15 Dec,
-                                            2018</a></div>
-                                    <h4 class="item-title"><a href="#">Salami Oven Roasted are
-                                            Mozzarella Oelette</a></h4>
-                                    <div class="item-post-by"><a href="single-blog.html"><i class="fas fa-user"></i><span>by</span>
-                                            John Martin</a></div>
-                                </div>
-                            </li>
+                            {% endfor %}
                         </ul>
                     </div>
                 </div>
@@ -215,42 +175,20 @@
                             data-r-medium-nav="true" data-r-medium-dots="false" data-r-large="1"
                             data-r-large-nav="true" data-r-large-dots="false" data-r-extra-large="1"
                             data-r-extra-large-nav="true" data-r-extra-large-dots="false">
+                            {% for blog in most_liked_blogs %}
                             <div class="featured-box-layout1">
                                 <div class="item-img">
-                                    <img src="{% static 'img/product/product17.jpg' %}" alt="Brand" class="img-fluid">
+                                    <img src="{{ blog.image.url }}" alt="Brand" class="img-fluid">
                                 </div>
                                 <div class="item-content">
-                                    <span class="ctg-name">BREAKFAST</span>
-                                    <h4 class="item-title"><a href="single-recipe1.html">Baked Garlic Prawn</a></h4>
-                                    <p>Definitiones noel ei verear intelle
-                                        gatpri civibus consequat area
-                                        refund efficiantue.</p>
+                                    {% for cat in blog.categories.all %}
+                                        <span class="ctg-name">{{ cat.title }}</span>
+                                    {% endfor %}
+                                    <h4 class="item-title"><a href="{% url "blogs:detail" pk=blog.id %}">{{ blog.title }}</a></h4>
+                                    <p>{{ blog.short_description }}</p>
                                 </div>
                             </div>
-                            <div class="featured-box-layout1">
-                                <div class="item-img">
-                                    <img src="{% static 'img/product/product18.jpg' %}" alt="Brand" class="img-fluid">
-                                </div>
-                                <div class="item-content">
-                                    <span class="ctg-name">DINNER</span>
-                                    <h4 class="item-title"><a href="single-recipe1.html">Baked Garlic Prawn</a></h4>
-                                    <p>Definitiones noel ei verear intelle
-                                        gatpri civibus consequat area
-                                        refund efficiantue.</p>
-                                </div>
-                            </div>
-                            <div class="featured-box-layout1">
-                                <div class="item-img">
-                                    <img src="{% static 'img/product/product19.jpg' %}" alt="Brand" class="img-fluid">
-                                </div>
-                                <div class="item-content">
-                                    <span class="ctg-name">SALAD</span>
-                                    <h4 class="item-title"><a href="single-recipe1.html">Baked Garlic Prawn</a></h4>
-                                    <p>Definitiones noel ei verear intelle
-                                        gatpri civibus consequat area
-                                        refund efficiantue.</p>
-                                </div>
-                            </div>
+                            {% endfor %}
                         </div>
                     </div>
                 </div>

@@ -21,3 +21,16 @@ class ContactModel(BaseModel):
         verbose_name = 'contact'
         verbose_name_plural = 'contacts'
     
+class AboutModel(BaseModel):
+    name = models.CharField(max_length=125)
+    email = models.EmailField()
+    phone = models.IntegerField()
+    message = models.TextField
+
+    def __str__(self):
+        return self.name
+    
+    class Meta:
+        verbose_name = 'About'
+        verbose_name_plural = 'Abouts'
+    
