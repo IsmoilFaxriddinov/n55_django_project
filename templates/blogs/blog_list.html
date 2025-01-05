@@ -11,7 +11,7 @@
                     <h1>List Blog Page</h1>
                     <ul>
                         <li>
-                            <a href="{% url "pages:h  ome" %}">Home</a>
+                            <a href="{% url "pages:home" %}">Home</a>
                         </li>
                         <li>Blog</li>
                     </ul>
@@ -26,111 +26,24 @@
     <div class="container">
         <div class="row gutters-60">
             <div class="col-lg-8">
+                {% for blog in blogs %}
                 <div class="blog-box-layout1">
                     <div class="item-figure">
-                        <a href="single-blog.html"><img src="{% static 'img/blog/blog9.jpg' %}" alt="Blog"></a>
+                        <a href="{% url "blog:detail" pk=blog.id %}"><img src="{{ blog.image.url }}" alt="Blog"></a>
                     </div>
                     <div class="item-content">
                         <ul class="entry-meta">
-                            <li><a href="#"><i class="fas fa-clock"></i>15 December, 2018</a></li>
-                            <li><a href="#"><i class="fas fa-user"></i>by <span>John Martin</span></a></li>
-                            <li><a href="#"><i class="fas fa-comments"></i>Comments <span>(03)</span></a></li>
-                            <li><a href="#"><i class="fas fa-heart"></i><span>59</span></a></li>
+                            <li><a href="#"><i class="fas fa-clock"></i>{{ blog.created_at }}</a></li>
+                            <li><a href="#"><i class="fas fa-user"></i>by <span>{{ blog.author.username }}</span></a></li>
+                            <li><a href="#"><i class="fas fa-comments"></i>Comments <span>{{ blog.comments.count }}</span></a></li>
+                            <li><a href="#"><i class="fas fa-heart"></i><span>{{ blog.likes.count }}</span></a></li>
                         </ul>
-                        <h3 class="item-title"><a href="single-blog.html">Tomatoes Stuffed with Foieand Chanter
-                                ellesdressed your designers
-                                had would if everyone theup still primaril</a></h3>
-                        <p>Rmply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                            industry's standard dummy text ever since the 1500s, when an unknown printer took a
-                            galley of type and scrambledsimply dummy text of the printing and typesetting
-                            industry. Lorem Ipsum has been the industry's standard.</p>
+                        <h3 class="item-title"><a href="single-blog.html">{{ blog.title }}</a></h3>
+                        <p>{{ blog.short_description }}</p>
                         <a href="single-blog.html" class="item-btn">Continue Reading<i class="flaticon-next"></i></a>
                     </div>
                 </div>
-                <div class="blog-box-layout1">
-                    <div class="item-figure">
-                        <a href="single-blog.html"><img src="{% static 'img/blog/blog10.jpg' %}" alt="Blog"></a>
-                    </div>
-                    <div class="item-content">
-                        <ul class="entry-meta">
-                            <li><a href="#"><i class="fas fa-clock"></i>15 December, 2018</a></li>
-                            <li><a href="#"><i class="fas fa-user"></i>by <span>John Martin</span></a></li>
-                            <li><a href="#"><i class="fas fa-comments"></i>Comments <span>(03)</span></a></li>
-                            <li><a href="#"><i class="fas fa-heart"></i><span>59</span></a></li>
-                        </ul>
-                        <h3 class="item-title"><a href="single-blog.html">Tomatoes Stuffed with Foieand Chanter
-                                ellesdressed your designers
-                                had would if everyone theup still primaril</a></h3>
-                        <p>Rmply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                            industry's standard dummy text ever since the 1500s, when an unknown printer took a
-                            galley of type and scrambledsimply dummy text of the printing and typesetting
-                            industry. Lorem Ipsum has been the industry's standard.</p>
-                        <a href="single-blog.html" class="item-btn">Continue Reading<i class="flaticon-next"></i></a>
-                    </div>
-                </div>
-                <div class="blog-box-layout1">
-                    <div class="item-figure">
-                        <a href="single-blog.html"><img src="{% static 'img/blog/blog11.jpg' %}" alt="Blog"></a>
-                    </div>
-                    <div class="item-content">
-                        <ul class="entry-meta">
-                            <li><a href="#"><i class="fas fa-clock"></i>15 December, 2018</a></li>
-                            <li><a href="#"><i class="fas fa-user"></i>by <span>John Martin</span></a></li>
-                            <li><a href="#"><i class="fas fa-comments"></i>Comments <span>(03)</span></a></li>
-                            <li><a href="#"><i class="fas fa-heart"></i><span>59</span></a></li>
-                        </ul>
-                        <h3 class="item-title"><a href="single-blog.html">Tomatoes Stuffed with Foieand Chanter
-                                ellesdressed your designers
-                                had would if everyone theup still primaril</a></h3>
-                        <p>Rmply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                            industry's standard dummy text ever since the 1500s, when an unknown printer took a
-                            galley of type and scrambledsimply dummy text of the printing and typesetting
-                            industry. Lorem Ipsum has been the industry's standard.</p>
-                        <a href="single-blog.html" class="item-btn">Continue Reading<i class="flaticon-next"></i></a>
-                    </div>
-                </div>
-                <div class="blog-box-layout1">
-                    <div class="item-figure">
-                        <a href="single-blog.html"><img src="{% static 'img/blog/blog12.jpg' %}" alt="Blog"></a>
-                    </div>
-                    <div class="item-content">
-                        <ul class="entry-meta">
-                            <li><a href="#"><i class="fas fa-clock"></i>15 December, 2018</a></li>
-                            <li><a href="#"><i class="fas fa-user"></i>by <span>John Martin</span></a></li>
-                            <li><a href="#"><i class="fas fa-comments"></i>Comments <span>(03)</span></a></li>
-                            <li><a href="#"><i class="fas fa-heart"></i><span>59</span></a></li>
-                        </ul>
-                        <h3 class="item-title"><a href="single-blog.html">Tomatoes Stuffed with Foieand Chanter
-                                ellesdressed your designers
-                                had would if everyone theup still primaril</a></h3>
-                        <p>Rmply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                            industry's standard dummy text ever since the 1500s, when an unknown printer took a
-                            galley of type and scrambledsimply dummy text of the printing and typesetting
-                            industry. Lorem Ipsum has been the industry's standard.</p>
-                        <a href="single-blog.html" class="item-btn">Continue Reading<i class="flaticon-next"></i></a>
-                    </div>
-                </div>
-                <div class="blog-box-layout1">
-                    <div class="item-figure">
-                        <a href="single-blog.html"><img src="{% static 'img/blog/blog13.jpg' %}" alt="Blog"></a>
-                    </div>
-                    <div class="item-content">
-                        <ul class="entry-meta">
-                            <li><a href="#"><i class="fas fa-clock"></i>15 December, 2018</a></li>
-                            <li><a href="#"><i class="fas fa-user"></i>by <span>John Martin</span></a></li>
-                            <li><a href="#"><i class="fas fa-comments"></i>Comments <span>(03)</span></a></li>
-                            <li><a href="#"><i class="fas fa-heart"></i><span>59</span></a></li>
-                        </ul>
-                        <h3 class="item-title"><a href="single-blog.html">Tomatoes Stuffed with Foieand Chanter
-                                ellesdressed your designers
-                                had would if everyone theup still primaril</a></h3>
-                        <p>Rmply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                            industry's standard dummy text ever since the 1500s, when an unknown printer took a
-                            galley of type and scrambledsimply dummy text of the printing and typesetting
-                            industry. Lorem Ipsum has been the industry's standard.</p>
-                        <a href="single-blog.html" class="item-btn">Continue Reading<i class="flaticon-next"></i></a>
-                    </div>
-                </div>
+                {% endfor %}
                 <ul class="pagination-layout1">
                     <li class="active">
                         <a href="#">1</a>
