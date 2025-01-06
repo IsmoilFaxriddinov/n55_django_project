@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from pages.forms import AboutForm, ContactForm
-from pages.models import ContactModel
+# from pages.models import ContactModel
 
 def home_page_view(request):
     return render(request, 'index.html')

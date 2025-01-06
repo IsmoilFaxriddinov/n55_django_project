@@ -1,8 +1,7 @@
 from django.db.models import Count
 from django.shortcuts import render
 
-from blogs.models import BlogModel
-from pages.forms import BlogDetailForm
+from blogs.models import BlogModel, BlogDetailModel
 
 def blog_page_view(request):
     blogs = BlogModel.objects.all()

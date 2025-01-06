@@ -1,6 +1,6 @@
 from django import forms
 
-from pages.models import AboutModel, BlogDetailModel, ContactModel
+from pages.models import AboutModel, ContactModel
 
 class ContactForm(forms.ModelForm):
     class Meta:
