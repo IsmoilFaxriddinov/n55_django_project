@@ -54,7 +54,7 @@ class BlogDetailModel(BaseModel):
     comment = models.TextField()
     name = models.CharField(max_length=125)
     email = models.EmailField()
-    website = models.CharField(max_length=150)
+    website = models.EmailField()
 
     def __str__(self):
         return self.name
