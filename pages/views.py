@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from pages.forms import AboutForm, BlogDetailForm, ContactForm
+from pages.forms import AboutForm, ContactForm
 from pages.models import ContactModel
 
 def home_page_view(request):

@@ -11,8 +11,3 @@ class AboutForm(forms.ModelForm):
     class Meta:
         model = AboutModel
         fields = '__all__'
-
-class BlogDetailForm(forms.ModelForm):
-    class Meta:
-        model = BlogDetailModel
-        fields = '__all__'

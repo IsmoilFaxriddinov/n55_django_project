@@ -36,3 +36,4 @@ class BlogLikesModelAdmin(admin.ModelAdmin):
     list_filter = ['created_at', 'updated_at']
     ordering = ['-created_at']
 
+admin.site.register(models.BlogDetailModel)
