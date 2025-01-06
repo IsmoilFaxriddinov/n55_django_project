@@ -2,6 +2,7 @@ from django.db.models import Count
 from django.shortcuts import render
 
 from blogs.models import BlogModel
+from pages.forms import BlogDetailForm
 
 def blog_page_view(request):
     blogs = BlogModel.objects.all()
@@ -21,5 +22,19 @@ def blog_detail_view(request, pk):
             'blog': blog
         }
         return render(request, 'blogs/blog_detail.html', context)
+    elif request.method == "GET":
+        return render(request, 'blogs:blog_detail.html')
+    elif request.method == "POST":
+        form = BlogDetailForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return render(request, 'blogs:blog_detail.html')
+        else:
+            context = {
+                'errors': form.errors
+            }
+            return render(request, 'blogs:blog_detail.html')
     else:
         return render(request, 'pages/404.html')
+    
+
