@@ -33,4 +33,17 @@ class AboutModel(BaseModel):
     class Meta:
         verbose_name = 'About'
         verbose_name_plural = 'Abouts'
+
+
+class BlogDetailModel(BaseModel):
+    comment = models.TextField()
+    name = models.CharField(max_length=125)
+    email = models.EmailField()
+    website = models.CharField(max_length=150)
+
+    def __str__(self):
+        return self.name
     
+    class Meta:
+        verbose_name = 'Blog detail'
+        verbose_name_plural = 'Blog details'
