@@ -150,7 +150,8 @@
                         <div class="section-heading3 heading-dark">
                             <h2 class="item-heading">LEAVE A REVIEW</h2>
                         </div>
-                        <form class="leave-form-box">
+                        <form class="leave-form-box", method="POST", action="{% url "blogs:detail" %}">
+                            {% csrf_token %}
                             <div class="row">
                                 <div class="col-12 form-group">
                                     <label>Comment :</label>

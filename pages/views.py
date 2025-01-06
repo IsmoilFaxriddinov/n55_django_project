@@ -35,14 +35,14 @@ def contact_page_view(request):
 
 def blog_detail_page_view(request):
     if request.method == "GET":
-        return render(request, 'pages:blog_detail.html')
+        return render(request, 'blogs:blog_detail.html')
     elif request.method == "POST":
         form = BlogDetailForm(request.POST)
         if form.is_valid():
             form.save()
-            return render(request, 'pages:blog_detail.html')
+            return render(request, 'blogs:blog_detail.html')
         else:
             context = {
                 'errors': form.errors
             }
-            return render(request, 'pages:blog_detail.html')
+            return render(request, 'blogs:blog_detail.html')
