@@ -21,7 +21,6 @@ def blog_detail_view(request, pk):
         context = {
             'blog': blog
         }
-        return render(request, 'blogs/blog_detail.html', context)
         if request.method == "GET":
             return render(request, 'blogs/blog_detail.html')
         elif request.method == "POST":
@@ -34,6 +33,8 @@ def blog_detail_view(request, pk):
                     'errors': form.errors
                 }
                 return render(request, 'blogs/blog_detail.html', context)
+        return render(request, 'blogs/blog_detail.html', context)
+
     else:
         return render(request, 'pages/404.html')
     
@@ -41,4 +42,16 @@ def blog_detail_view(request, pk):
 
 
     
+    # if request.method == "GET":
+    #         return render(request, 'blogs/blog_detail.html')
+    #     elif request.method == "POST":
+    #         form = BlogDetailForm(request.POST)
+    #         if form.is_valid():
+    #             form.save()
+    #             return render(request, 'blogs/blog_detail.html')
+    #         else:
+    #             context = {
+    #                 'errors': form.errors
+    #             }
+    #             return render(request, 'blogs/blog_detail.html', context)
 
