@@ -18,24 +18,25 @@ def blog_page_view(request):
 def blog_detail_view(request, pk):
     blog = BlogModel.objects.filter(id=pk).first()
     if blog is not None:
-        context = {
-            'blog': blog
-        }
-
+        if request.method == "GET":
+            context = {
+                'blog': blog
+            }
+            return render(request, 'blogs/blog_detail.html', context)
+        elif request.method == "POST":
+            form = BlogDetailForm(request.POST)
+            if form.is_valid():
+                form.save()
+                context = {
+                    'blog': blog,
+                    'message': 'yuborildi 👍'
+                }
+                return render(request, 'blogs/blog_detail.html', context)
+            else:
+                context = {
+                    'blog': blog,
+                    'errors': form.errors
+                }
+                return render(request, 'blogs/blog_detail.html', context)
     else:
         return render(request, 'pages/404.html')
-
-    
-    # if request.method == "GET":
-    #         return render(request, 'blogs/blog_detail.html')
-    #     elif request.method == "POST":
-    #         form = BlogDetailForm(request.POST)
-    #         if form.is_valid():
-    #             form.save()
-    #             return render(request, 'blogs/blog_detail.html')
-    #         else:
-    #             context = {
-    #                 'errors': form.errors
-    #             }
-    #             return render(request, 'blogs/blog_detail.html', context)
-
