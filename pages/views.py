@@ -33,4 +33,5 @@ def contact_page_view(request):
             context = {
                 'errors': form.errors
             }
+        messages.success(request, 'Xatolik, Xabaringiz yuborilmadi ⚠️')
         return render(request, 'pages/contact.html', context)
