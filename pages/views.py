@@ -1,3 +1,4 @@
+from django.contrib import messages
 from django.shortcuts import render
 from pages.forms import AboutForm, ContactForm
 # from pages.models import ContactModel
@@ -26,6 +27,7 @@ def contact_page_view(request):
         form = ContactForm(request.POST)
         if form.is_valid():
             form.save()
+            messages.success(request, 'Xabaringiz databazaga yuborildi 👍')
             return render(request, 'pages/contact.html')
         else:
             context = {
