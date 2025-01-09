@@ -9,7 +9,6 @@ class RegisterForm(UserCreationForm):
         model = UserModel
         fields = ['first_name', 'last_name', 'username', 'email', 'password1', 'password2']
 
-class LoginForm(forms.Form)
+class LoginForm(forms.Form):
     email_or_username = forms.CharField(max_length=125)
     password = forms.CharField(max_length=125)
-    
