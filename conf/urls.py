@@ -25,7 +25,7 @@ urlpatterns = [
     path('shop/', include('shop.urls', namespace='shop')),
     path('blogs/', include('blogs.urls', namespace='blogs')),
     path('recipies/', include('recipies.urls', namespace='recipies')),
-    path('register/', include('users.urls', namespace='users'))
+    path('users/', include('users.urls', namespace='users'))
 ]
 
 
