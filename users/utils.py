@@ -14,7 +14,7 @@ def send_email_confirmation(user, request):
     subject = 'Confirm your email address'
     message = render_to_string('auth/email_confirmation.html', context={
         'user':user,
-        'confirmation_link': confirmation_link
+        'confirmation_link': confirmation_link,
     })
     send_mail(subject, message, settings.EMAIL_HOST_USER, [user.email])
 
