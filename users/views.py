@@ -59,7 +59,7 @@ def login_view(request):
             except CustomUserModel.DoesNotExist:
                 return redirect('users:login')
             
-            authenticated_user = authenticate(user=user, password=password)
+            authenticated_user = authenticate(username=user.username, password=password)
             if authenticated_user is not None:
                 login(request, authenticated_user)
                 return redirect('pages:home')
