@@ -24,5 +24,5 @@ def register_view(request):
             messages.success(request, 'Please, confirm your email or login')
             return redirect('users:login')
         else:
-            messages.error(request, form.error_messages)
+            messages.error(request, form.error_messages)        
             return render(request, 'auth/register.html')
