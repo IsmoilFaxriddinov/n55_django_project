@@ -1,7 +1,7 @@
 from django.db.models import Count
 from django.shortcuts import render
 
-from blogs.forms import BlogDetailForm
+from blogs.forms import BlogCommentModelForm, BlogDetailForm
 from blogs.models import BlogModel
 
 def blog_page_view(request):
@@ -40,3 +40,14 @@ def blog_detail_view(request, pk):
                 return render(request, 'blogs/blog_detail.html', context)
     else:
         return render(request, 'pages/404.html')
+
+def blog_comment_view(request, blog_id):
+    if request.method == "POST":
+        try:
+            blog = BlogModel.objects.get(id=blog_id)
+        except BlogModel.DoesNotExist:
+            return render(request, 'pages/404.html')
+        
+        form = BlogCommentModelForm(request.POST)
+        if form.is_valid():
+            pass
