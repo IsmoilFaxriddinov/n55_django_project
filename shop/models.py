@@ -15,3 +15,6 @@ class ProductModel(BaseModel):
     class Meta:
         verbose_name = 'product'
         verbose_name_plural = 'products'
+
+class ProductTextModel(BaseModel):
+        
