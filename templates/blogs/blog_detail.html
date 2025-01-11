@@ -150,6 +150,7 @@
                         <div class="section-heading3 heading-dark">
                             <h2 class="item-heading">LEAVE A REVIEW</h2>
                         </div>
+                        {% if request.user.is_authenticated %}
                         <form class="leave-form-box", method="POST", action="{% url "blogs:detail" pk=blog.id %}">
                             {% csrf_token %}
                             <div class="row">
@@ -159,30 +160,10 @@
                                         cols="20" data-error="Message field is required" required></textarea>
                                     <div class="help-block with-errors"></div>
                                 </div>
-                                <div class="col-md-4 form-group">
-                                    <label>Name :</label>
-                                    <input type="text" placeholder="" class="form-control" name="name"
-                                        data-error="Name field is required" required>
-                                    <div class="help-block with-errors"></div>
-                                </div>
-                                <div class="col-md-4 form-group">
-                                    <label>E-mail :</label>
-                                    <input type="email" placeholder="" class="form-control" name="email"
-                                        data-error="E-mail field is required" required>
-                                    <div class="help-block with-errors"></div>
-                                </div>
-                                <div class="col-md-4 form-group">
-                                    <label>Website :</label>
-                                    <input type="email" placeholder="" class="form-control" name="website"
-                                        data-error="E-mail field is required" required>
-                                    <div class="help-block with-errors"></div>
-                                </div>
-                                <div class="col-12 form-group mb-0">
-                                    <button type="submit" class="item-btn">POST REVIEW</button>
-                                </div>
                             </div>
                             <div class="form-response"></div>
                         </form>
+                        {% endif %}
                     </div>
                 </div>
             </div>

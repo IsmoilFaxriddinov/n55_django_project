@@ -16,5 +16,3 @@ class ProductModel(BaseModel):
         verbose_name = 'product'
         verbose_name_plural = 'products'
 
-class ProductTextModel(BaseModel):
-        

@@ -1,8 +1,8 @@
 {% load static %}
 <div id="search" class="search-wrap">
     <button type="button" class="close">×</button>
-    <form class="search-form">
-        <input type="search" id="ooooo" value="" placeholder="Type here........" />
+    <form class="search-form" action="{% url "shop:product-list" %}">
+        <input name="q" type="search" id="ooooo" value="{{ request.GET.q }}" placeholder="Type here........" />
         <button type="submit" class="search-btn"><i class="flaticon-search"></i></button>
     </form>
 </div>
