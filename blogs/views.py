@@ -1,6 +1,5 @@
 from django.db.models import Count
-from django.shortcuts import render
-
+from django.shortcuts import redirect, render
 from blogs.forms import BlogCommentModelForm, BlogDetailForm
 from blogs.models import BlogModel
 
@@ -50,4 +49,8 @@ def blog_comment_view(request, blog_id):
         
         form = BlogCommentModelForm(request.POST)
         if form.is_valid():
-            pass
+            comment = form.save(commit=False)
+            comment.blog = blog
+            comment.save()
+            return redirect('next')
+            

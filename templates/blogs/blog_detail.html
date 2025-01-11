@@ -151,12 +151,12 @@
                             <h2 class="item-heading">LEAVE A REVIEW</h2>
                         </div>
                         {% if request.user.is_authenticated %}
-                        <form class="leave-form-box", method="POST", action="{% url "blogs:detail" pk=blog.id %}">
+                        <form class="leave-form-box", method="POST", action="{% url "blogs:comment" blog_id=blog.id %}">
                             {% csrf_token %}
                             <div class="row">
                                 <div class="col-12 form-group">
                                     <label>Comment :</label>
-                                    <textarea placeholder="Comment" class="textarea form-control" name="comment" rows="7"
+                                    <textarea name="" placeholder="Comment" class="textarea form-control" name="comment" rows="7"
                                         cols="20" data-error="Message field is required" required></textarea>
                                     <div class="help-block with-errors"></div>
                                 </div>
